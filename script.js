@@ -1,16 +1,12 @@
 function decimalToBinary(num) {
   // Write your code here
-	let arr=[];
-	let r;
-	let i=0;
-	while(num!=0){
-		r=num%2;//0 1 0 1
-		arr[i]+=r;//0101 
-		num=num/2;//0
-		i++;
+	let binStr = "";
+	while(num !== 0){
+		let rem = num%2;
+		binStr+=rem;
+		num = Math.floor(num/2);
 	}
-	arr.reverse();
-	return arr;
+	return binStr.split("").reverse().join("");
 }
 
 window.decimalToBinary = decimalToBinary;
